@@ -1,0 +1,20 @@
+
+package com.github.bigtoast.apiAnalysis.proto;
+
+message Artist {
+  required int64 id = 10;
+  required string name = 20; 
+}
+
+message Event {
+  required int64 id = 10;
+  optional string name = 20;
+  required int64 time = 30;
+  repeated Artist artists = 40; 
+}
+
+message Ticket {
+  required string id = 10;
+  required Event event = 20;
+}
+

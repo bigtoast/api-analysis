@@ -1,0 +1,43 @@
+{
+	"namespace" : "com.github.bigtoast.apiAnalysis.avro",
+	"protocol" : "AEventService",
+	
+	"types" : [
+		{
+  		  "name" : "Artist",
+		  "type" : "record",
+		  "fields" : [ 
+		    { "name":"id", "type":"int" },
+		    { "name":"name", "type":"string" }
+		  ]
+        },
+
+		{
+		  "name" : "Event",
+		  "type" : "record",
+		  "fields" : [
+		    { "name":"id", "type":"long" },
+		    { "name":"name", "type":"string" },
+		    { "name":"time", "type":"long" },
+		    { "name":"artists", "type" : { "type" :"array", "items" : "Artist" } }
+		  ]
+		 },
+		 
+		 {
+		   "name" : "Ticket",
+		   "type" : "record",
+		   "fields" : [
+		     { "name" : "id", "type" : "string" },
+		     { "name" : "event", "type" : "Event" }
+		   ]
+		 }
+	],
+	
+	"messages" : {
+	  "listEvents" : {
+	    "request" : [],
+	    "response" : { "type" : "array", "items" : "Event" }
+	  }
+	}
+	
+}

@@ -1,0 +1,25 @@
+
+
+namespace  com.github.bigtoast.apiAnalysis.msgpack
+
+message Artist {
+  10: long id
+  20: string name 
+}
+
+message Event {
+  10: long id
+  20: optional string name
+  30: long time
+  40: list<Artist> artists 
+}
+
+message Ticket {
+  10: string id
+  20: Event event
+}
+
+service MEventService:0 {
+  list<Event> listEvents();
+  list<Ticket> getTicket( 1: long eventId, 2: int count );
+}
