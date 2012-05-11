@@ -35,5 +35,6 @@
 	<classpathentry kind="lib" path="/Users/andrew/.ivy2/cache/org.jboss.netty/netty/bundles/netty-3.2.7.Final.jar"/>
 	<classpathentry kind="lib" path="/Users/andrew/.ivy2/cache/com.typesafe.akka/akka-actor/jars/akka-actor-2.0.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/usr/local/lib"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
