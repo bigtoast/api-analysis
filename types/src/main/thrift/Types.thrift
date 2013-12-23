@@ -1,6 +1,8 @@
 
 namespace * com.github.bigtoast.apiAnalysis.thrift
 
+/// asdf hjkfdsfdsfdhjklhjkh
+
 struct Artist {
   10: required i64 id;
   20: required string name; 

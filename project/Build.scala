@@ -5,9 +5,10 @@ import sbtavro.SbtAvro
 // avroSettings : _*
 import sbtprotobuf.ProtobufPlugin
 // protobufSettings :_ *
-import atd.sbtthrift.ThriftPlugin
+import com.github.bigtoast.sbtthrift.ThriftPlugin
+import ThriftPlugin._
 // thriftSettings
-import com.github.bigtoast.sbtmsgpack.MsgPackPlugin
+//import com.github.bigtoast.sbtmsgpack.MsgPackPlugin
 
 object ApiAnalysis extends Build {
 
@@ -32,12 +33,13 @@ object ApiAnalysis extends Build {
        settings = 
        	Defaults.defaultSettings        ++
 	    ThriftPlugin.thriftSettings     ++
-        ProtobufPlugin.protobufSettings ++
+	    ProtobufPlugin.protobufSettings ++
  	    SbtAvro.avroSettings            ++
- 	    //MsgPackPlugin.msgpackSettings   ++
  	    Seq(
  	      libraryDependencies ++= List( thrift, netty, akka, msgpack, akka_zmq, avro_ipc, scala_test ),
- 	      resolvers += typesafe
+ 	      resolvers += typesafe,
+	      thriftRubyEnabled in Thrift := true,
+	      thriftPythonEnabled in Thrift := true
  	    )
  	    
   ).configs( IntegrationTest )
